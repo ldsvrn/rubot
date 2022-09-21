@@ -43,19 +43,11 @@ async def menu(ctx):
             f'//*[@id="menu-repas"]/ul/li[{i}]/div/div[2]/div/div/ul[1]/li/text()')[1:-1]
         menus.append(menu)
 
-    results = []
-    for date, menu in zip(dates, menus):
-        results.append({
-            "date": date,
-            "menu": menu
-        })
-
     embed = discord.Embed(title="Menu")
-    for i in results:
-        embed.add_field(name=i['date'].strftime(
-            '%A %w %B %Y'), value=", ".join(i['menu']), inline=False)
-        print(f'{i["date"]} {i["menu"]}')
-
+    for date, menu in zip(dates, menus):
+        embed.add_field(name=date.strftime(
+            '%A %w %B %Y'), value=", ".join(menu), inline=False)
+        print(f'{date} {menu}')
     await ctx.respond(embed=embed)
 
 bot.run(token)
