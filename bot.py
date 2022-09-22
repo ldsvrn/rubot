@@ -46,7 +46,7 @@ async def menu(ctx):
     embed = discord.Embed(title="Menu")
     for date, menu in zip(dates, menus):
         embed.add_field(name=date.strftime(
-            '%A %w %B %Y'), value=", ".join(menu), inline=False)
+            '%A %d %B %Y'), value=", ".join(menu), inline=False)
         print(f'{date} {menu}')
     await ctx.respond(embed=embed)
 
