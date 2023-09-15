@@ -1,0 +1,3 @@
+[submodule "edt"]
+	path = edt
+	url = https://github.com/ldsvrn/edt-parser

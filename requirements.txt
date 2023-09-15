@@ -2,4 +2,5 @@ lxml
 py-cord
 python-dotenv
 requests
-beautifulsoup
+beautifulsoup4
+icalendar
